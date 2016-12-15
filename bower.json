@@ -1,0 +1,17 @@
+{
+  "name": "ng-week-2",
+  "authors": [
+    "abraxasrex <jbreasor@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
