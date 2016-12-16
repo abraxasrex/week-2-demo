@@ -8,6 +8,13 @@
     <!--  -->
     <h1> Hello World! </h1>
     <p> Angular says: {{vm.message}} </p>
+    <ul >
+      <li ng-repeat="item in vm.items">
+        <hr />
+        <strong> {{item.title}} </strong>
+        {{item.body}}
+      </li>
+    </ul>
     <!--  -->
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="app.js"></script>
