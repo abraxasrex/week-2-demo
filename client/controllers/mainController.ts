@@ -1,23 +1,16 @@
 class mainController {
     public message = `Hello from the controller!`;
-    public items;
-    public item;
-    public remoteAPI = 'https://jsonplaceholder.typicode.com/posts';
-    public localAPI = 'file:///home/jona/code_demos/ng-week-2/client/index.html/myItems';
-    public postItem(){
-      this.$http.post(this.localAPI, this.item).then(()=>{
-        console.log(`yeah.`);
-      }).catch((err)=>{
-        console.log(err);
-      });
+    public items = [
+      {title: 'a', body: 'albatross'},
+      {title: 'b', body: 'barbados'}
+    ];
+
+    constructor(){
     }
-    constructor(private $http: ng.IHttpService){
-      this.$http.get(this.remoteAPI).then((res)=>{
-        console.log('res: ', res);
-        this.items = res.data;
-      }).catch((err)=>{
-        console.log(err);
-      });
+}
+class page1Controller {
+    constructor(){
     }
 }
 angular.module('exampleApp').controller('mainController', mainController);
+angular.module('exampleApp').controller('page1Controller', page1Controller);
