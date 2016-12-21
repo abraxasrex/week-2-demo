@@ -21,6 +21,7 @@
     <input ng-model="vm.searchTerm"/>
     <h3> Grocery List </h3>
     <ul>
+            <!-- <li ng-repeat="item in vm.groceries | filter: {type: 'fruit'}"> -->
       <li ng-repeat="item in vm.groceries | filter: vm.searchTerm">
         {{item.name}}:
         {{item.price}}
