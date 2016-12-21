@@ -2,7 +2,7 @@ angular.module('exampleApp', []);
 
 class mainController {
   message="Hello World!";
-  searchTerm = 'fruit';
+  searchTerm;
   itemToUpdate;
   groceries=[
     {name: 'apples', type: 'fruit', price: 2, image: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSUsjl4nzHTX1BJap-1HzhJpqr0ygK364Ma8HaVzHBAMPYyz8PerQ'},
@@ -14,9 +14,13 @@ class mainController {
   deleteThis (item){
     this.groceries.splice(this.groceries.indexOf(item), 1);
   }
-  constructor(){
-
+  customFilter (_this) {
+    let term = _this.searchTerm;
+    return function(item) {
+      return item.type === term;
+    }
   }
+  constructor(){}
 }
 
 angular.module('exampleApp').controller('mainController', mainController);
