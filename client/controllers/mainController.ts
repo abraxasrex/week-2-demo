@@ -1,16 +1,11 @@
 class mainController {
-    public message = `Hello from the controller!`;
-    public items = [
-      {title: 'a', body: 'albatross'},
-      {title: 'b', body: 'barbados'}
-    ];
     constructor(){
-      console.log('hello main')
+      console.log('hello mainController')
     }
 }
 class page1Controller {
     constructor(){
-      console.log('hello page1')
+      console.log('hello page1Controller')
     }
 }
 angular.module('exampleApp').controller('mainController', mainController);
