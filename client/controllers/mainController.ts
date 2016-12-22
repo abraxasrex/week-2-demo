@@ -5,7 +5,6 @@ let superHeroes = [
   {id: 899328423949224, name: 'hyper kamilah', power: '5 dimensional coding'}
 ]
 
-
 class mainController {
   superHeroes;
     constructor(){
@@ -19,6 +18,7 @@ class page1Controller {
   localAPI = 'file:///home/jona/code_demos/ng-week-2/client/index.html/myItems';
   items;
   itemToPost;
+  message = new Date().toISOString().slice(0,10);
   goHome(){
     this.$state.go('Home');
   }
@@ -31,15 +31,6 @@ class page1Controller {
         console.log(err);
       });
     }
-
-    public postItem(){
-      this.$http.post(this.localAPI, this.itemToPost).then(()=>{
-        console.log(`yeah.`);
-      }).catch((err)=>{
-        console.log(err);
-      });
-    }
-
 }
 
 class detailsController{
