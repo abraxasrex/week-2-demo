@@ -1,0 +1,15 @@
+<h1> you're on details! </h1>
+
+detail controller message: {{vm.message}}
+
+<h5> this hero is: {{vm.hero.name}} </h5>
+<h5> their power is {{vm.hero.power}} </h5>
+
+<hr />
+<h5> edit hero: </h5>
+<label> name </label>
+<input ng-model="vm.hero.name" />
+<label> power </label>
+<input ng-model="vm.hero.power" />
+
+<button ng-click="vm.updateHero()">update</button>
