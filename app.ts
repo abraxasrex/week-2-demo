@@ -3,6 +3,7 @@ import * as path from 'path';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
 
+// import things from '/api/thing.js';
 let app = express();
 
 app.use(logger('dev'));
@@ -11,6 +12,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, '/client')));
+
+// app.use('/api/things', things);
 
 app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname, '/client', 'index.html'));

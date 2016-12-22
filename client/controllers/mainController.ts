@@ -17,7 +17,7 @@ class mainController {
 class page1Controller {
   remoteAPI = 'https://jsonplaceholder.typicode.com/posts';
   localAPI = 'file:///home/jona/code_demos/ng-week-2/client/index.html/myItems';
-  items = [];
+  items;
   itemToPost;
   goHome(){
     this.$state.go('Home');
