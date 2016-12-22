@@ -8,7 +8,6 @@ let superHeroes = [
 class mainController {
   superHeroes;
     constructor(){
-      console.log('hello mainController');
       this.superHeroes = superHeroes;
     }
 }
@@ -17,15 +16,12 @@ class page1Controller {
   remoteAPI = 'https://jsonplaceholder.typicode.com/posts';
   localAPI = 'file:///home/jona/code_demos/ng-week-2/client/index.html/myItems';
   items;
-  itemToPost;
   message = new Date().toISOString().slice(0,10);
   goHome(){
     this.$state.go('Home');
   }
     constructor(private $state: ng.ui.IStateService, private $http: ng.IHttpService){
-      console.log('hello page1Controller');
       this.$http.get(this.remoteAPI).then((res)=>{
-        console.log('res: ', res);
         this.items = res.data;
       }).catch((err)=>{
         console.log(err);
@@ -41,10 +37,7 @@ class detailsController{
   }
   constructor(private $stateParams: ng.ui.IStateParamsService, private $state: ng.ui.IStateService){
     this.superHeroes = superHeroes;
-    // console.log('hello details controller')
-     console.log($stateParams["id"]);
     this.hero = this.superHeroes.filter((hero)=>{
-      console.log(hero.id);
       return hero.id == parseInt($stateParams["id"]);
     })[0];
     console.log(this.hero);
