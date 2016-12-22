@@ -1,0 +1,15 @@
+<h1> You are home! </h1>
+<hr />
+<p> Angular says: {{vm.message}} </p>
+
+<hr />
+
+<ul >
+  <li ng-repeat="hero in vm.superHeroes">
+    {{hero.name}} /
+    {{hero.power}} /
+     <a ui-sref="Details({ id: hero.id})">
+       view
+     </a>
+  </li>
+</ul>

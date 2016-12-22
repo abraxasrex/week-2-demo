@@ -3,29 +3,15 @@
   <head>
     <title> ng app </title>
     <meta charset="utf-8">
+     <base href="/" />
   </head>
-  <body ng-controller="mainController as vm">
+  <body>
     <!--  -->
-    <h1> Hello World! </h1>
-    <p> Angular says: {{vm.message}} </p>
-    <h3>let's post:</h3>
-    <form ng-submit="vm.postItem()">
-      <label>title</label>
-      <input ng-model="vm.item.title" />
-      <label>body</label>
-      <input ng-model="vm.item.body" />
-      <button type="submit">post it!</button>
-   </form>
-    <h3> weird lorem ipsum stuff from the API: </h3>
-    <ul >
-      <li ng-repeat="item in vm.items">
-        <hr />
-        <strong> {{item.title}} </strong>
-        {{item.body}}
-      </li>
-    </ul>
+      <a ui-sref="Page1">Page 1</a> | <a ui-sref="Home">Home</a>
+      <ui-view></ui-view>
     <!--  -->
     <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="app.js"></script>
     <script src ="controllers/mainController.js"></script>
   </body>
