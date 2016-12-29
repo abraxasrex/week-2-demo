@@ -1,8 +1,9 @@
 //TODO: why wrap app and controllers in namespace?
-  angular.module('exampleApp', ['ui.router']).config((
+  angular.module('exampleApp', ['ui.router', 'ngMaterial']).config((
     $stateProvider: ng.ui.IStateProvider,
     $locationProvider: ng.ILocationProvider,
-    $urlRouterProvider: ng.ui.IUrlRouterProvider)=>{
+    $urlRouterProvider: ng.ui.IUrlRouterProvider,
+    $mdThemingProvider: ng.material.IThemingProvider)=>{
     $stateProvider
            .state('Home', {
                url: '/',
@@ -24,4 +25,11 @@
         });
        $urlRouterProvider.otherwise('/');
        $locationProvider.html5Mode(true);
+       //material design fun times:
+       $mdThemingProvider
+         .theme('default')
+         .primaryPalette('indigo')
+         .accentPalette('pink')
+         .warnPalette('red')
+         .backgroundPalette('blue-grey');
   });
